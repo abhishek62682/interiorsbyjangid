@@ -1,0 +1,1439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InteriorsbyJangid – Legacy Turnkey Interior Contracting Since 1974</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Theme & Global Styles -->
+    <style type="text/tailwindcss">
+      @theme {
+        --color-cream: #f5ece0;
+        --color-orange: #f55e36;
+        --color-dark: #111111;
+        --font-primary: "Hedvig Letters Serif", serif;
+        --font-secondary: "Inter", sans-serif;
+
+        --animate-marquee: marquee 22s linear infinite;
+        --animate-fadein: fadein 0.8s ease both;
+
+        --shadow-card: 0px 4px 18px 0px rgba(0, 0, 0, 0.12);
+
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes fadein {
+          from { opacity: 0; transform: translateY(28px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      }
+
+      .testimonial-swiper .swiper-wrapper { align-items: stretch; }
+      .testimonial-swiper .swiper-slide { height: auto; }
+      .testimonial-swiper .swiper-slide > div { height: 100%; }
+
+      .line-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #111111, transparent);
+      }
+
+      html { scroll-behavior: smooth; }
+      body { background-color: var(--color-cream); overflow-x: hidden; }
+
+      .hero-swiper,
+      .hero-swiper .swiper-wrapper,
+      .hero-swiper .swiper-slide {
+        height: 100vh;
+        width: 100%;
+      }
+
+      .swiper-pagination-bullet {
+        background: #fff !important;
+        opacity: 0.5;
+        width: 9px;
+        height: 9px;
+      }
+      .swiper-pagination-bullet-active {
+        background: var(--color-orange) !important;
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="font-secondary">
+
+    <!-- ===== GSAP & LENIS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+
+    <!-- ===== PAGE LOADER ===== -->
+    <!-- <div id="loader" style="position:fixed;inset:0;z-index:9999;display:flex;pointer-events:all;">
+      <div class="loader-bar bg-orange" style="width:20%;height:100%;transform-origin:top;"></div>
+      <div class="loader-bar bg-orange" style="width:20%;height:100%;transform-origin:top;"></div>
+      <div class="loader-bar bg-orange" style="width:20%;height:100%;transform-origin:top;"></div>
+      <div class="loader-bar bg-orange" style="width:20%;height:100%;transform-origin:top;"></div>
+      <div class="loader-bar bg-orange" style="width:20%;height:100%;transform-origin:top;"></div>
+    </div> -->
+
+    <script>
+      /* Lenis smooth scroll */
+      const lenis = new Lenis({ autoRaf: true });
+      lenis.on('scroll', (e) => { console.log(e); });
+
+      /* Page loader animation */
+      (function () {
+        const loader = document.getElementById("loader");
+        document.body.style.overflow = "hidden";
+        gsap.to(".loader-bar", {
+          height: 0,
+          duration: 0.4,
+          ease: "power3.inOut",
+          stagger: 0.1,
+          delay: 0.1,
+          onComplete: () => {
+            loader.style.display = "none";
+            document.body.style.overflow = "";
+          }
+        });
+      })();
+    </script>
+
+    <!-- ===== FIXED ACTION BUTTONS ===== -->
+    <div class="fixed bottom-25 right-6 z-50 flex flex-col items-end gap-3">
+
+      <!-- Call Button -->
+      <a href="tel:+918928862682"
+        style="max-width: 52px; transition: max-width 0.4s cubic-bezier(0.4,0,0.2,1), background 0.3s;"
+        onmouseenter="this.style.maxWidth='200px'"
+        onmouseleave="this.style.maxWidth='52px'"
+        class="group flex items-center justify-end bg-dark hover:bg-orange text-white rounded-full shadow-lg overflow-hidden h-[52px]">
+        <span class="font-secondary text-[13px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 pl-4 pr-1">Call Us Now</span>
+        <span class="w-[52px] h-[52px] flex items-center justify-center flex-shrink-0">
+          <i class="ri-phone-line text-[20px]"></i>
+        </span>
+      </a>
+
+      <!-- WhatsApp Button -->
+      <a href="https://wa.me/918928862682?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services."
+        target="_blank"
+        style="max-width: 52px; transition: max-width 0.4s cubic-bezier(0.4,0,0.2,1), background 0.3s;"
+        onmouseenter="this.style.maxWidth='200px'"
+        onmouseleave="this.style.maxWidth='52px'"
+        class="group flex items-center justify-end bg-[#25D366] hover:bg-[#1ebe5d] text-white rounded-full shadow-lg overflow-hidden h-[52px]">
+        <span class="font-secondary text-[13px] font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 pl-4 pr-1">Chat on WhatsApp</span>
+        <span class="w-[52px] h-[52px] flex items-center justify-center flex-shrink-0">
+          <i class="ri-whatsapp-line text-[22px]"></i>
+        </span>
+      </a>
+
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <style>
+      #home { padding-top: 68px; margin-top: -68px; }
+      .hero-swiper, .hero-swiper .swiper-wrapper, .hero-swiper .swiper-slide { height: 100vh; }
+      body.sheet-open { overflow: hidden; }
+
+      #site-nav.scrolled #nav-bg {
+        background: rgba(245, 236, 224, 0.88);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+      }
+      #site-nav.scrolled .nav-link { color: rgba(17, 17, 17, 0.60); }
+      #site-nav.scrolled .nav-link:hover { color: #f55e36; }
+      #site-nav.scrolled #nav-logo { color: #111111; }
+      #site-nav.scrolled .nav-cta { border-color: rgba(17, 17, 17, 0.20); color: #111111; }
+      #site-nav.scrolled .nav-cta:hover { background: #f55e36; border-color: #f55e36; color: #fff; }
+      #site-nav.scrolled .nav-bar { background: #111111; }
+    </style>
+
+    <header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div id="nav-bg" class="transition-all duration-300">
+    <div class="px-8 md:px-0 max-w-7xl mx-auto h-[68px] flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="font-primary text-white text-[22px] leading-none" id="nav-logo">
+        Interiors<span class="text-orange">ByJangid</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-7">
+       
+        
+        <a href="#about" class="nav-link font-secondary text-[13px] text-white/70 hover:text-orange transition-colors duration-200">Legacy</a>
+        
+        <a href="#services" class="nav-link font-secondary text-[13px] text-white/70 hover:text-orange transition-colors duration-200">Services</a>
+        
+        <a href="#process" class="nav-link font-secondary text-[13px] text-white/70 hover:text-orange transition-colors duration-200">Process</a>
+        
+        <a href="#testimonials" class="nav-link font-secondary text-[13px] text-white/70 hover:text-orange transition-colors duration-200">Clients</a>
+        
+        <a href="#warranty" class="nav-link font-secondary text-[13px] text-white/70 hover:text-orange transition-colors duration-200">Warranty</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20enquire%20about%20InteriorsbyJangid%20services." class="hidden md:inline-flex group items-center gap-2 text-dark text-[15px] font-semibold px-5 py-2.5 rounded-full bg-orange text-white transition-all duration-200">
+        Talk to Us
+        <div class="relative w-[16px] h-[16px] overflow-hidden flex items-center justify-center">
+          <i class="ri-arrow-right-up-line absolute text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+          <i class="ri-arrow-right-up-line absolute text-[16px] -translate-x-[16px] translate-y-[16px] transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"></i>
+        </div>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button id="nav-toggle" aria-label="Open menu" class="md:hidden flex flex-col justify-center items-end gap-[5px] w-10 h-10 -mr-2">
+        <span class="nav-bar block w-[22px] h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center"></span>
+        <span class="nav-bar block w-[22px] h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center"></span>
+        <span class="nav-bar block w-[14px] h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+    <!-- ===== MOBILE SHEET ===== -->
+<div id="nav-backdrop" class="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+<div id="nav-sheet" class="fixed top-0 right-0 z-50 h-full w-[300px] bg-cream translate-x-full transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] md:hidden flex flex-col">
+
+  <!-- Sheet Header -->
+  <div class="flex items-center justify-between px-6 h-[68px] border-b border-dark/[0.07]">
+    <span class="font-primary text-dark text-[20px]">Interiors<span class="text-orange">ByJangid</span></span>
+    <button id="nav-close" aria-label="Close menu" class="w-9 h-9 rounded-full bg-dark/5 flex items-center justify-center hover:bg-dark/10 transition-colors">
+      <i class="ri-close-line text-[18px] text-dark"></i>
+    </button>
+  </div>
+
+  <!-- Sheet Links -->
+  <nav class="flex flex-col px-6 pt-4 pb-4 gap-0 flex-1 overflow-y-auto">
+    <a href="#about"        class="sheet-link font-secondary text-[14px] text-dark/65 py-3 border-b border-dark/[0.06] hover:text-orange transition-colors flex items-center justify-between">Legacy <i class="ri-arrow-right-line text-[13px] opacity-30"></i></a>
+    <a href="#services"     class="sheet-link font-secondary text-[14px] text-dark/65 py-3 border-b border-dark/[0.06] hover:text-orange transition-colors flex items-center justify-between">Services <i class="ri-arrow-right-line text-[13px] opacity-30"></i></a>
+    <a href="#process"      class="sheet-link font-secondary text-[14px] text-dark/65 py-3 border-b border-dark/[0.06] hover:text-orange transition-colors flex items-center justify-between">Process <i class="ri-arrow-right-line text-[13px] opacity-30"></i></a>
+    <a href="#testimonials" class="sheet-link font-secondary text-[14px] text-dark/65 py-3 border-b border-dark/[0.06] hover:text-orange transition-colors flex items-center justify-between">Clients <i class="ri-arrow-right-line text-[13px] opacity-30"></i></a>
+    <a href="#warranty"     class="sheet-link font-secondary text-[14px] text-dark/65 py-3 border-b border-dark/[0.06] hover:text-orange transition-colors flex items-center justify-between">Warranty <i class="ri-arrow-right-line text-[13px] opacity-30"></i></a>
+  </nav>
+
+  <!-- Sheet CTA -->
+  <div class="px-6 pb-10 pt-4 space-y-3">
+    <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20enquire%20about%20InteriorsbyJangid%20services." class="sheet-link w-full flex items-center justify-center gap-2 bg-orange text-white font-secondary font-semibold text-[14px] py-3.5 rounded-full hover:bg-dark transition-colors duration-200">
+      Talk to Us <i class="ri-arrow-right-up-line"></i>
+    </a>
+    <a href="tel:+919323923202" class="w-full flex items-center justify-center gap-2 bg-dark/5 text-dark font-secondary text-[13px] py-3 rounded-full hover:bg-dark/10 transition-colors duration-200">
+      <i class="ri-whatsapp-line text-orange"></i> +91 93239 23202
+    </a>
+  </div>
+
+</div>
+
+    <script>
+      /* Navbar scroll + mobile sheet logic */
+      const nav      = document.getElementById('site-nav');
+      const toggle   = document.getElementById('nav-toggle');
+      const close    = document.getElementById('nav-close');
+      const sheet    = document.getElementById('nav-sheet');
+      const backdrop = document.getElementById('nav-backdrop');
+
+      let lastY   = 0;
+      let ticking = false;
+      const SCROLL_THRESHOLD = 60;
+
+      function handleScroll() {
+        const currentY = window.scrollY;
+        if (currentY > SCROLL_THRESHOLD) { nav.classList.add('scrolled'); }
+        else { nav.classList.remove('scrolled'); }
+        if (currentY < 80) { nav.style.transform = 'translateY(0)'; }
+        else if (currentY > lastY + 4) { nav.style.transform = 'translateY(-100%)'; }
+        else if (currentY < lastY - 4) { nav.style.transform = 'translateY(0)'; }
+        lastY   = currentY;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(handleScroll); ticking = true; }
+      }, { passive: true });
+
+      function openSheet() {
+        sheet.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.classList.add('sheet-open');
+      }
+      function closeSheet() {
+        sheet.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.classList.remove('sheet-open');
+      }
+
+      toggle.addEventListener('click', openSheet);
+      close.addEventListener('click', closeSheet);
+      backdrop.addEventListener('click', closeSheet);
+      document.querySelectorAll('.sheet-link').forEach(l => l.addEventListener('click', closeSheet));
+    </script>
+
+   <!-- ===== HERO SECTION ===== -->
+<section id="home" class="relative">
+  <div class="hero-swiper swiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide relative overflow-hidden">
+        <img src="https://framerusercontent.com/images/Ok7CwRDfgWtqm2LHpLLX2OJSeKM.jpg?scale-down-to=2048&width=5000&height=3000" alt="Interior Design" class="absolute inset-0 w-full h-full object-cover" />
+        
+      
+        
+        <div class="absolute inset-0 bg-gradient-to-r from-black/75 to-black/5"></div>
+
+        <div class="absolute bottom-[clamp(100px,15vh,170px)] left-[clamp(20px,5vw,80px)] right-[clamp(20px,5vw,80px)] text-white animate-fadein">
+          
+          <p class="font-secondary font-semibold text-light text-[14px] uppercase tracking-widest">
+            Est. 1974 · 4th Generation · Mumbai · Maharashtra
+          </p>
+
+          <h1 class="font-primary mt-3 mb-6 text-[clamp(36px,5.5vw,80px)] leading-[1.1]">
+            Where Legacy<br />
+            Meets
+            Execution.
+          </h1>
+
+          <p class="font-secondary text-white/75 text-[clamp(14px,1.15vw,17px)] leading-relaxed max-w-lg mb-8">
+            50 years of Jangid craftsmanship. A 100% in-house team. One turnkey promise from first sketch to final handover, nothing leaves our control.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            
+            <a href="#contact" class="inline-flex group items-center gap-2 bg-white text-dark text-[15px] font-semibold px-7 py-4 rounded-full hover:bg-primary hover:text-white transition-all duration-200">
+              Book Free Consultation
+
+              <div class="relative w-[16px] h-[16px] overflow-hidden flex items-center justify-center">
+                <i class="ri-arrow-right-up-line absolute text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+                <i class="ri-arrow-right-up-line absolute text-[16px] -translate-x-[16px] translate-y-[16px] transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"></i>
+              </div>
+            </a>
+
+            <a href="#contact" class="inline-flex group items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-[15px] font-semibold px-7 py-4 rounded-full hover:bg-white hover:text-dark transition-all duration-200">
+              Get a Site Visit
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+<div class="swiper-slide relative overflow-hidden">
+  
+    <img src="https://framerusercontent.com/images/2gOFYrqJ9GioFQSyulTYXJSfFHI.png?scale-down-to=2048&width=2912&height=1632" alt="Interior Design" class="absolute inset-0 w-full h-full object-cover" />
+  
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/10"></div>
+
+  <div class="absolute bottom-[clamp(100px,15vh,170px)] left-[clamp(20px,5vw,80px)] right-[clamp(20px,5vw,80px)] text-white animate-fadein">
+    
+    <p class="font-secondary font-semibold text-light text-[14px] uppercase tracking-widest">
+      Interior Design Studio · Mumbai · Maharashtra
+    </p>
+
+   <h1 class="font-primary mt-3 mb-6 text-[clamp(36px,5.5vw,80px)] leading-[1.1]">
+  Modern Interiors.<br />
+  Designed For
+  Living.
+</h1>
+
+    <p class="font-secondary text-white/75 text-[clamp(14px,1.15vw,17px)] leading-relaxed max-w-lg mb-8">
+      Design Services · Turnkey Contractor · Project Management · Modular Furnitures · Loose Furnitures  all executed under one experienced in-house team.
+    </p>
+
+    <div class="flex flex-wrap gap-4">
+      
+      <a href="#contact" class="inline-flex group items-center gap-2 bg-white text-dark text-[15px] font-semibold px-7 py-4 rounded-full hover:bg-primary hover:text-white transition-all duration-200">
+        Start Your Project
+
+        <div class="relative w-[16px] h-[16px] overflow-hidden flex items-center justify-center">
+          <i class="ri-arrow-right-up-line absolute text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+          <i class="ri-arrow-right-up-line absolute text-[16px] -translate-x-[16px] translate-y-[16px] transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"></i>
+        </div>
+      </a>
+
+      <a href="#contact" class="inline-flex group items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-[15px] font-semibold px-7 py-4 rounded-full hover:bg-white hover:text-dark transition-all duration-200">
+        Discuss Requirements
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="swiper-slide relative overflow-hidden">
+  
+  <img src="https://framerusercontent.com/images/hXi06PQPApjn50vZDZCTSL7v1iw.png?width=1456&height=816" alt="Interior Design" class="absolute inset-0 w-full h-full object-cover" />
+  
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/10"></div>
+
+  <div class="absolute bottom-[clamp(100px,15vh,170px)] left-[clamp(20px,5vw,80px)] right-[clamp(20px,5vw,80px)] text-white animate-fadein">
+    
+    <p class="font-secondary font-semibold text-light text-[14px] uppercase tracking-widest">
+      100% In-House Team · Trusted Execution
+    </p>
+
+   <h1 class="font-primary mt-3 mb-6 text-[clamp(36px,5.5vw,80px)] leading-[1.1]">
+  Elegant Spaces.<br />
+  Built To
+  Inspire.
+</h1>
+
+    <p class="font-secondary text-white/75 text-[clamp(14px,1.15vw,17px)] leading-relaxed max-w-lg mb-8">
+      From planning and modular production to final site execution, every detail is managed with precision, accountability, and premium craftsmanship.
+    </p>
+
+    <div class="flex flex-wrap gap-4">
+      
+      <a href="#contact" class="inline-flex group items-center gap-2 bg-white text-dark text-[15px] font-semibold px-7 py-4 rounded-full hover:bg-primary hover:text-white transition-all duration-200">
+        Book Consultation
+
+        <div class="relative w-[16px] h-[16px] overflow-hidden flex items-center justify-center">
+          <i class="ri-arrow-right-up-line absolute text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+          <i class="ri-arrow-right-up-line absolute text-[16px] -translate-x-[16px] translate-y-[16px] transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"></i>
+        </div>
+      </a>
+
+      <a href="#contact" class="inline-flex group items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white text-[15px] font-semibold px-7 py-4 rounded-full hover:bg-white hover:text-dark transition-all duration-200">
+        View Services
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <!-- Hero Prev / Next -->
+  <div class="absolute bottom-[clamp(20px,4vh,40px)] right-[clamp(40px,8vw,300px)] flex gap-4 z-20">
+    
+    <button id="heroPrev" class="w-[50px] h-[50px] rounded-full bg-black/30 text-white text-xl flex items-center justify-center border border-white/20 backdrop-blur-sm hover:bg-primary transition-all duration-200">
+      <i class="ri-arrow-left-line"></i>
+    </button>
+
+    <button id="heroNext" class="w-[50px] h-[50px] rounded-full bg-black/30 text-white text-xl flex items-center justify-center border border-white/20 backdrop-blur-sm hover:bg-primary transition-all duration-200">
+      <i class="ri-arrow-right-line"></i>
+    </button>
+
+  </div>
+</section>
+
+   <!-- ===== MARQUEE TICKER ===== -->
+<div class="bg-orange overflow-hidden flex py-9">
+  <div class="flex gap-12 animate-marquee whitespace-nowrap">
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-star-s-fill text-white text-lg"></i><span class="font-secondary font-normal text-[17px] text-white">Official Livspace Vendor</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-check-double-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">Interior Company Partner</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-presentation-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">HomeLane Certified</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-shield-check-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">ISO 7105 Marine Grade Only</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-home-heart-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">50 Projects / Quarter Cap</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-line-chart-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">3 + 5 + 10 Yr Warranty</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-star-s-fill text-white text-lg"></i><span class="font-secondary font-normal text-[17px] text-white">Official Livspace Vendor</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-check-double-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">Interior Company Partner</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-presentation-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">HomeLane Certified</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-shield-check-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">ISO 7105 Marine Grade Only</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-home-heart-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">50 Projects / Quarter Cap</span></div>
+    <div class="flex shrink-0 items-center gap-2.5"><i class="ri-line-chart-line text-white text-lg"></i><span class="font-secondary font-light text-[17px] text-white">3 + 5 + 10 Yr Warranty</span></div>
+  </div>
+</div>
+
+   <!-- ===== LEGACY SECTION ===== -->
+<section id="about" class="pt-[100px] md:pt-[130px] px-6 md:px-10">
+  <div class="max-w-7xl mx-auto space-y-14">
+
+    <!-- Header -->
+    <div class="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 md:space-y-6">
+      <span class="font-secondary inline-block font-semibold text-orange text-[14px] uppercase tracking-widest">Our Legacy</span>
+      <h2 class="font-primary text-dark text-[clamp(32px,4vw,56px)] leading-[1.15]">Four Generations.<br />One Standard.</h2>
+      <p class="font-secondary text-[17px] leading-[1.8] text-dark/65 font-light">We are a legacy of 50+ years; this is the 4th generation of Jangids serving the community with care and craftsmanship. Being Marwadis, we value our time and your time, our money and your money, with the deepest honour.</p>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-[#fffaf3] rounded-xl pt-8 pb-10 px-10 space-y-10 shadow-card">
+        <h3 class="font-primary text-[72px] leading-none text-orange">50+</h3>
+        <div class="space-y-2">
+          <p class="font-secondary text-[20px] font-normal text-dark">Years Legacy</p>
+          <p class="font-secondary text-[15px] font-light leading-relaxed text-dark/55">Four decades of craftsmen excellence before "turnkey" was even a word in interior design.</p>
+        </div>
+      </div>
+      <div class="bg-[#fffaf3] rounded-xl pt-8 pb-10 px-10 space-y-10 shadow-card">
+        <h3 class="font-primary text-[72px] leading-none text-orange">40+</h3>
+        <div class="space-y-2">
+          <p class="font-secondary text-[20px] font-normal text-dark">In-House Specialists</p>
+          <p class="font-secondary text-[15px] font-light leading-relaxed text-dark/55">Official vendors to Livspace, Interior Company, and HomeLane with precision execution.</p>
+        </div>
+      </div>
+      <div class="bg-[#fffaf3] rounded-xl pt-8 pb-10 px-10 space-y-10 shadow-card">
+        <h3 class="font-primary text-[72px] leading-none text-orange">70+</h3>
+        <div class="space-y-2">
+          <p class="font-secondary text-[20px] font-normal text-dark">Trusted Partners</p>
+          <p class="font-secondary text-[15px] font-light leading-relaxed text-dark/55">20+ architects and 50+ designers across Mumbai relying on our craftsmanship.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+   
+   <!-- ===== SERVICES SECTION ===== -->
+<section id="services" class="py-[100px] md:py-[150px] px-6 md:px-10">
+  <div class="max-w-7xl mx-auto space-y-14">
+
+    <div class="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 md:space-y-6">
+      <span class="font-secondary inline-block font-semibold text-orange text-[14px] uppercase tracking-widest">What We Do</span>
+      <h2 class="font-primary text-dark text-[clamp(32px,4vw,56px)] leading-[1.15]">Five Verticals.<br />One Seamless Execution.</h2>
+      <p class="font-secondary text-[17px] leading-[1.8] text-dark/65 font-light">From space planning to modular furniture, we handle every aspect of your interior  design, execution, finishes, and furnishings under one warranty and one project manager.</p>
+    </div>
+
+    <div class="grid mx-auto grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Service A: Design -->
+      <div class="bg-[#fffaf3] flex flex-col rounded-[8px] overflow-hidden h-full">
+        <div class="w-full relative h-[120px]">
+          <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/5vyxaS8akKRKG06xiDmLgIjFA.png?scale-down-to=1024&width=1232&height=928" alt="Design" />
+          <div class="px-6 absolute bottom-0 translate-y-1/2">
+            <div class="size-[72px] border border-[#2f2c251f] backdrop-blur-lg bg-[#fefaf399] flex justify-center items-center rounded-full">
+              <span class="font-primary text-orange text-2xl">A</span>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-12 flex-1 flex flex-col space-y-4">
+          <h5 class="text-[28px] leading-[34px] font-primary text-dark">Design</h5>
+          <ul class="text-[14px] font-normal leading-[22px] text-[#2f2c25]/70 font-secondary space-y-2">
+            <li>• Space planning & layout</li>
+            <li>• 2D working drawings</li>
+            <li>• 3D visualisation</li>
+            <li>• 360° walkthrough</li>
+            <li>• Material board & BOQ</li>
+          </ul>
+          <div class="mt-auto">
+            <a href="#contact" class="group text-[14px] gap-[3px] flex items-center leading-[19px] font-medium text-[#2f2c25] font-secondary">
+              Get in Touch
+              <div class="relative w-[16px] h-[16px] overflow-hidden">
+                <i class="ri-arrow-right-up-line absolute top-0 left-0 text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+                <i class="ri-arrow-right-up-line absolute -left-[16px] top-[16px] text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service B: Onsite Execution -->
+      <div class="bg-[#fffaf3] flex flex-col rounded-[8px] overflow-hidden h-full">
+        <div class="w-full relative h-[120px]">
+          <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/5tJGpiTNpcqEP4EX20Qr0b4CKS4.webp?scale-down-to=1024&width=1232&height=928" alt="Onsite Execution" />
+          <div class="px-6 absolute bottom-0 translate-y-1/2">
+            <div class="size-[72px] border border-[#2f2c251f] backdrop-blur-lg bg-[#fefaf399] flex justify-center items-center rounded-full">
+              <span class="font-primary text-orange text-2xl">B</span>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-12 flex-1 flex flex-col space-y-4">
+          <h5 class="text-[28px] leading-[34px] font-primary text-dark">Onsite Execution</h5>
+          <ul class="text-[14px] font-normal leading-[22px] text-[#2f2c25]/70 font-secondary space-y-2">
+            <li>• Electrical & conduit</li>
+            <li>• Plumbing & sanitary</li>
+            <li>• Civil & masonry</li>
+            <li>• PU / Duco painting</li>
+            <li>• Marble & stone</li>
+            <li>• Wall panelling & cladding</li>
+          </ul>
+          <div class="mt-auto">
+            <a href="#contact" class="group text-[14px] gap-[3px] flex items-center leading-[19px] font-medium text-[#2f2c25] font-secondary">
+              Get in Touch
+              <div class="relative w-[16px] h-[16px] overflow-hidden">
+                <i class="ri-arrow-right-up-line absolute top-0 left-0 text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+                <i class="ri-arrow-right-up-line absolute -left-[16px] top-[16px] text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service C: Loose Furniture -->
+      <div class="bg-[#fffaf3] flex flex-col rounded-[8px] overflow-hidden h-full">
+        <div class="w-full relative h-[120px]">
+          <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/IvzK2mKOwHV1jSBuTqaqcA0co.webp?scale-down-to=1024&width=1232&height=928" alt="Loose Furniture" />
+          <div class="px-6 absolute bottom-0 translate-y-1/2">
+            <div class="size-[72px] border border-[#2f2c251f] backdrop-blur-lg bg-[#fefaf399] flex justify-center items-center rounded-full">
+              <span class="font-primary text-orange text-2xl">C</span>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-12 flex-1 flex flex-col space-y-4">
+          <h5 class="text-[28px] leading-[34px] font-primary text-dark">Loose Furniture</h5>
+          <ul class="text-[14px] font-normal leading-[22px] text-[#2f2c25]/70 font-secondary space-y-2">
+            <li>• Sofa & seating</li>
+            <li>• Dining sets</li>
+            <li>• Console & accent pieces</li>
+            <li>• Custom upholstery</li>
+          </ul>
+          <div class="mt-auto">
+            <a href="#contact" class="group text-[14px] gap-[3px] flex items-center leading-[19px] font-medium text-[#2f2c25] font-secondary">
+              Get in Touch
+              <div class="relative w-[16px] h-[16px] overflow-hidden">
+                <i class="ri-arrow-right-up-line absolute top-0 left-0 text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+                <i class="ri-arrow-right-up-line absolute -left-[16px] top-[16px] text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service D: Furnishings -->
+      <div class="bg-[#fffaf3] flex flex-col rounded-[8px] overflow-hidden h-full">
+        <div class="w-full relative h-[120px]">
+          <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/5vyxaS8akKRKG06xiDmLgIjFA.png?scale-down-to=1024&width=1232&height=928" alt="Furnishings" />
+          <div class="px-6 absolute bottom-0 translate-y-1/2">
+            <div class="size-[72px] border border-[#2f2c251f] backdrop-blur-lg bg-[#fefaf399] flex justify-center items-center rounded-full">
+              <span class="font-primary text-orange text-2xl">D</span>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-12 flex-1 flex flex-col space-y-4">
+          <h5 class="text-[28px] leading-[34px] font-primary text-dark">Furnishings</h5>
+          <ul class="text-[14px] font-normal leading-[22px] text-[#2f2c25]/70 font-secondary space-y-2">
+            <li>• Curtains & drapes</li>
+            <li>• Blinds & shutters</li>
+            <li>• Premium mattresses</li>
+            <li>• Wallpapers & textures</li>
+          </ul>
+          <div class="mt-auto">
+            <a href="#contact" class="group text-[14px] gap-[3px] flex items-center leading-[19px] font-medium text-[#2f2c25] font-secondary">
+              Get in Touch
+              <div class="relative w-[16px] h-[16px] overflow-hidden">
+                <i class="ri-arrow-right-up-line absolute top-0 left-0 text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+                <i class="ri-arrow-right-up-line absolute -left-[16px] top-[16px] text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service E: Modular Furniture -->
+      <div class="bg-[#fffaf3] flex flex-col rounded-[8px] overflow-hidden h-full">
+        <div class="w-full relative h-[120px]">
+          <img class="w-full h-full object-cover" src="https://framerusercontent.com/images/5tJGpiTNpcqEP4EX20Qr0b4CKS4.webp?scale-down-to=1024&width=1232&height=928" alt="Modular Furniture" />
+          <div class="px-6 absolute bottom-0 translate-y-1/2">
+            <div class="size-[72px] border border-[#2f2c251f] backdrop-blur-lg bg-[#fefaf399] flex justify-center items-center rounded-full">
+              <span class="font-primary text-orange text-2xl">E</span>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-12 flex-1 flex flex-col space-y-4">
+          <h5 class="text-[28px] leading-[34px] font-primary text-dark">Modular Furniture</h5>
+          <ul class="text-[14px] font-normal leading-[22px] text-[#2f2c25]/70 font-secondary space-y-2">
+            <li>• Kitchen & storage</li>
+            <li>• Wardrobe systems</li>
+            <li>• TV & media units</li>
+            <li>• In-house production</li>
+            <li>• Site installation</li>
+          </ul>
+          <div class="mt-auto">
+            <a href="#contact" class="group text-[14px] gap-[3px] flex items-center leading-[19px] font-medium text-[#2f2c25] font-secondary">
+              Get in Touch
+              <div class="relative w-[16px] h-[16px] overflow-hidden">
+                <i class="ri-arrow-right-up-line absolute top-0 left-0 text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+                <i class="ri-arrow-right-up-line absolute -left-[16px] top-[16px] text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PROCESS SECTION -->
+      <section
+        id="process"
+        aria-labelledby="process-heading"
+        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#faf7f2]"
+      >
+        <div class="max-w-7xl mx-auto">
+          <!-- Header -->
+          <div class="flex flex-col items-center text-center gap-4 mb-16">
+            <span class="text-sm text-gray-500">(Our Process)</span>
+            <h2
+              id="process-heading"
+              class="font-primary reveal-text text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight tracking-normal"
+            >
+              A System That Doesn't Miss.
+            </h2>
+            <p class="text-sm reveal-text sm:text-base text-gray-600 leading-relaxed max-w-3xl">
+              Every project follows the same disciplined 7-step process. No surprises. No re-work. No delays. This is the system behind every handover we've done in 50 years.
+            </p>
+          </div>
+
+          <!-- Steps -->
+          <ol
+            class="flex flex-wrap justify-center gap-[40px] gap-y-[80px] pt-16 list-none p-0 m-0"
+          >
+            <!-- Step 1 -->
+            <li class="flex flex-col items-center relative w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]">
+              <div
+                class="size-[140px] flex justify-center absolute -translate-y-1/2"
+              >
+                <div
+                  class="size-25 bg-[#faf7f2] flex items-center justify-center rounded-full"
+                >
+                  <span class="text-[30px] font-normal leading-9">01</span>
+                </div>
+              </div>
+              <div
+                class="bg-cream flex flex-col items-center space-y-2.5 pt-[80px] px-[20px] pb-[30px] text-black rounded-[20px] text-center w-full"
+              >
+                <h3 class="text-[24px] font-primary font-normal leading-9">
+                  Discovery Call
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Understand scope, budget, timeline & lifestyle requirements
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 2 -->
+            <li class="flex flex-col items-center relative w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]">
+              <div
+                class="size-[140px] flex justify-center absolute -translate-y-1/2"
+              >
+                <div
+                  class="size-25 bg-[#faf7f2] flex items-center justify-center rounded-full"
+                >
+                  <span class="text-[30px] font-normal leading-9">02</span>
+                </div>
+              </div>
+              <div
+                class="bg-cream flex flex-col items-center space-y-2.5 pt-[80px] px-[20px] pb-[30px] text-black rounded-[20px] text-center w-full"
+              >
+                <h3 class="text-[24px] font-primary font-normal leading-9">
+                  Site Visit & Measurement
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Detailed onsite survey with precision measurements & condition assessment
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 3 -->
+            <li class="flex flex-col items-center relative w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]">
+              <div
+                class="size-[140px] flex justify-center absolute -translate-y-1/2"
+              >
+                <div
+                  class="size-25 bg-[#faf7f2] flex items-center justify-center rounded-full"
+                >
+                  <span class="text-[30px] font-normal leading-9">03</span>
+                </div>
+              </div>
+              <div
+                class="bg-cream flex flex-col items-center space-y-2.5 pt-[80px] px-[20px] pb-[30px] text-black rounded-[20px] text-center w-full"
+              >
+                <h3 class="text-[24px] font-primary font-normal leading-9">
+                  Design Proposal
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  2D layouts, 3D renders, material boards, BOQ & timeline presented
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 4 -->
+            <li class="flex flex-col items-center relative w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]">
+              <div
+                class="size-[140px] flex justify-center absolute -translate-y-1/2"
+              >
+                <div
+                  class="size-25 bg-[#faf7f2] flex items-center justify-center rounded-full"
+                >
+                  <span class="text-[30px] font-normal leading-9">04</span>
+                </div>
+              </div>
+              <div
+                class="bg-cream flex flex-col items-center space-y-2.5 pt-[80px] px-[20px] pb-[30px] text-black rounded-[20px] text-center w-full"
+              >
+                <h3 class="text-[24px] font-primary font-normal leading-9">
+                  Design Lock-In
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Final approvals, revision sign-off, payment schedule confirmed
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 5 -->
+            <li class="flex flex-col items-center relative w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]">
+              <div
+                class="size-[140px] flex justify-center absolute -translate-y-1/2"
+              >
+                <div
+                  class="size-25 bg-[#faf7f2] flex items-center justify-center rounded-full"
+                >
+                  <span class="text-[30px] font-normal leading-9">05</span>
+                </div>
+              </div>
+              <div
+                class="bg-cream flex flex-col items-center space-y-2.5 pt-[80px] px-[20px] pb-[30px] text-black rounded-[20px] text-center w-full"
+              >
+                <h3 class="text-[24px] font-primary font-normal leading-9">
+                  Production Begins
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  In-house modular production starts parallely with site civil prep
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 6 -->
+            <li class="flex flex-col items-center relative w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]">
+              <div
+                class="size-[140px] flex justify-center absolute -translate-y-1/2"
+              >
+                <div
+                  class="size-25 bg-[#faf7f2] flex items-center justify-center rounded-full"
+                >
+                  <span class="text-[30px] font-normal leading-9">06</span>
+                </div>
+              </div>
+              <div
+                class="bg-cream flex flex-col items-center space-y-2.5 pt-[80px] px-[20px] pb-[30px] text-black rounded-[20px] text-center w-full"
+              >
+                <h3 class="text-[24px] font-primary font-normal leading-9">
+                  Supervised Execution
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Daily PM & supervisor presence. Milestone photos & updates shared
+                </p>
+              </div>
+            </li>
+
+            <!-- Step 7 -->
+            <li class="flex flex-col items-center relative w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]">
+              <div
+                class="size-[140px] flex justify-center absolute -translate-y-1/2"
+              >
+                <div
+                  class="size-25 bg-[#faf7f2] flex items-center justify-center rounded-full"
+                >
+                  <span class="text-[30px] font-normal leading-9">07</span>
+                </div>
+              </div>
+              <div
+                class="bg-cream flex flex-col items-center space-y-2.5 pt-[80px] px-[20px] pb-[30px] text-black rounded-[20px] text-center w-full"
+              >
+                <h3 class="text-[24px] font-primary font-normal leading-9">
+                  Snag & Handover
+                </h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Formal snag list, final walkthrough, warranty documentation issued
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+   
+
+<!-- ===== WHY CHOOSE US SECTION ===== -->
+<section id="why-choose-us" class="py-[80px] md:py-[120px] lg:py-[150px] px-4 sm:px-6 md:px-8 lg:px-10 bg-orange">
+  <div class="max-w-7xl mx-auto space-y-12 md:space-y-16 lg:space-y-20">
+
+    <!-- Header -->
+    <div class="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 md:space-y-6">
+      <span class="font-secondary font-semibold text-cream text-[12px] sm:text-[13px] md:text-[14px] uppercase tracking-widest block opacity-80">Why We Are Different</span>
+      <h2 class="font-primary text-white text-[28px] sm:text-[36px] md:text-[42px] lg:text-[56px] leading-[1.15] tracking-tight">Not Every Contractor<br class="hidden sm:block" />Is Built This Way.</h2>
+      <p class="font-secondary text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] leading-[1.7] md:leading-[1.8] text-white/70 font-light px-2 sm:px-0">Most contractors outsource everything. We built everything in-house. That's not a marketing line — it's the core of how we protect your budget, timeline, and quality.</p>
+    </div>
+
+    <!-- Comparison -->
+    <div>
+
+      <!-- Column Labels — desktop only -->
+      <div class="hidden md:grid grid-cols-[1fr_56px_1fr] mb-3 px-1">
+        <p class="font-secondary font-semibold text-[11px] uppercase tracking-widest text-white/60">InteriorsbyJangid</p>
+        <div></div>
+        <p class="font-secondary font-semibold text-[11px] uppercase tracking-widest text-white/60">Typical Contractor</p>
+      </div>
+
+      <!-- Rows -->
+      <div class="space-y-2">
+
+        <!-- Row 1 -->
+        <div class="flex flex-col md:grid md:grid-cols-[1fr_56px_1fr] items-stretch">
+          <div class="flex items-start gap-3 bg-[#fffaf3] rounded-[12px] md:rounded-l-[12px] md:rounded-r-none p-5">
+            <div class="size-[22px] rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-check-line text-white text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-dark text-[13px] sm:text-[14px] leading-[1.65] font-medium">100% in-house team — carpenter, electrician, civil, PU painter, supervisor, PM, designer, architect</p>
+          </div>
+          <div class="flex items-center justify-center bg-orange py-2 md:py-0">
+            <span class="font-secondary text-white/50 text-[10px] font-bold tracking-widest uppercase">vs</span>
+          </div>
+          <div class="flex items-start gap-3 bg-dark rounded-[12px] md:rounded-r-[12px] md:rounded-l-none p-5">
+            <div class="size-[22px] rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-close-line text-white/50 text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-white/70 text-[13px] sm:text-[14px] leading-[1.65]">Multiple freelance subcontractors with no accountability chain</p>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="flex flex-col md:grid md:grid-cols-[1fr_56px_1fr] items-stretch">
+          <div class="flex items-start gap-3 bg-[#fffaf3] rounded-[12px] md:rounded-l-[12px] md:rounded-r-none p-5">
+            <div class="size-[22px] rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-check-line text-white text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-dark text-[13px] sm:text-[14px] leading-[1.65] font-medium">Direct vendor pricing — Polycab, Century, Merino, Hettich, Hafele, Fevicol Marine, Rehau</p>
+          </div>
+          <div class="flex items-center justify-center bg-orange py-2 md:py-0">
+            <span class="font-secondary text-white/50 text-[10px] font-bold tracking-widest uppercase">vs</span>
+          </div>
+          <div class="flex items-start gap-3 bg-dark rounded-[12px] md:rounded-r-[12px] md:rounded-l-none p-5">
+            <div class="size-[22px] rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-close-line text-white/50 text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-white/70 text-[13px] sm:text-[14px] leading-[1.65]">Passes through middlemen markup on every material purchase</p>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="flex flex-col md:grid md:grid-cols-[1fr_56px_1fr] items-stretch">
+          <div class="flex items-start gap-3 bg-[#fffaf3] rounded-[12px] md:rounded-l-[12px] md:rounded-r-none p-5">
+            <div class="size-[22px] rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-check-line text-white text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-dark text-[13px] sm:text-[14px] leading-[1.65] font-medium">ISO 710 marine-grade core material on 100% of woodwork — no exceptions</p>
+          </div>
+          <div class="flex items-center justify-center bg-orange py-2 md:py-0">
+            <span class="font-secondary text-white/50 text-[10px] font-bold tracking-widest uppercase">vs</span>
+          </div>
+          <div class="flex items-start gap-3 bg-dark rounded-[12px] md:rounded-r-[12px] md:rounded-l-none p-5">
+            <div class="size-[22px] rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-close-line text-white/50 text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-white/70 text-[13px] sm:text-[14px] leading-[1.65]">Uses cheaper board grades at standard pricing — hard to verify after installation</p>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="flex flex-col md:grid md:grid-cols-[1fr_56px_1fr] items-stretch">
+          <div class="flex items-start gap-3 bg-[#fffaf3] rounded-[12px] md:rounded-l-[12px] md:rounded-r-none p-5">
+            <div class="size-[22px] rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-check-line text-white text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-dark text-[13px] sm:text-[14px] leading-[1.65] font-medium">Maximum 50 projects per quarter — ensures dedicated attention and quality control</p>
+          </div>
+          <div class="flex items-center justify-center bg-orange py-2 md:py-0">
+            <span class="font-secondary text-white/50 text-[10px] font-bold tracking-widest uppercase">vs</span>
+          </div>
+          <div class="flex items-start gap-3 bg-dark rounded-[12px] md:rounded-r-[12px] md:rounded-l-none p-5">
+            <div class="size-[22px] rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-close-line text-white/50 text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-white/70 text-[13px] sm:text-[14px] leading-[1.65]">Takes unlimited projects, supervision gets stretched, timelines slip</p>
+          </div>
+        </div>
+
+        <!-- Row 5 -->
+        <div class="flex flex-col md:grid md:grid-cols-[1fr_56px_1fr] items-stretch">
+          <div class="flex items-start gap-3 bg-[#fffaf3] rounded-[12px] md:rounded-l-[12px] md:rounded-r-none p-5">
+            <div class="size-[22px] rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-check-line text-white text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-dark text-[13px] sm:text-[14px] leading-[1.65] font-medium">45–60 day guaranteed design-to-handover with milestone accountability</p>
+          </div>
+          <div class="flex items-center justify-center bg-orange py-2 md:py-0">
+            <span class="font-secondary text-white/50 text-[10px] font-bold tracking-widest uppercase">vs</span>
+          </div>
+          <div class="flex items-start gap-3 bg-dark rounded-[12px] md:rounded-r-[12px] md:rounded-l-none p-5">
+            <div class="size-[22px] rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-close-line text-white/50 text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-white/70 text-[13px] sm:text-[14px] leading-[1.65]">Open-ended timelines; delays routinely hit 3–6+ months</p>
+          </div>
+        </div>
+
+        <!-- Row 6 -->
+        <div class="flex flex-col md:grid md:grid-cols-[1fr_56px_1fr] items-stretch">
+          <div class="flex items-start gap-3 bg-[#fffaf3] rounded-[12px] md:rounded-l-[12px] md:rounded-r-none p-5">
+            <div class="size-[22px] rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-check-line text-white text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-dark text-[13px] sm:text-[14px] leading-[1.65] font-medium">10-year woodwork warranty + 5-year hardware + 3-year onsite service</p>
+          </div>
+          <div class="flex items-center justify-center bg-orange py-2 md:py-0">
+            <span class="font-secondary text-white/50 text-[10px] font-bold tracking-widest uppercase">vs</span>
+          </div>
+          <div class="flex items-start gap-3 bg-dark rounded-[12px] md:rounded-r-[12px] md:rounded-l-none p-5">
+            <div class="size-[22px] rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-[2px]">
+              <i class="ri-close-line text-white/50 text-[12px]"></i>
+            </div>
+            <p class="font-secondary text-white/70 text-[13px] sm:text-[14px] leading-[1.65]">6-month warranty (if any), post-handover support virtually non-existent</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- ===== VISION & MISSION SECTION ===== -->
+<section id="vision-mission" class="pt-[80px] md:pt-[120px] lg:pt-[150px] px-4 sm:px-6 md:px-8 lg:px-10 bg-cream">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Vision -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-20 md:mb-32">
+      <div class="space-y-6 md:space-y-8">
+        <div class="space-y-3 md:space-y-4">
+          <span class="font-secondary font-semibold text-orange text-[12px] sm:text-[13px] md:text-[14px] uppercase tracking-widest block">Our Legacy</span>
+          <h2 class="font-primary text-dark text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] leading-[1.15] tracking-tight">Four Generations. One Promise.</h2>
+        </div>
+        <p class="font-secondary text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] leading-[1.7] md:leading-[1.8] text-dark/70 font-light max-w-md">Legacy turnkey interior contracting since 1974. Every project delivered with the same honour, craftsmanship, and accountability that the Jangid family has built its name on across four generations.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-0.5"><i class="ri-check-line text-white text-[14px]"></i></div><span class="font-secondary text-[14px] md:text-[15px] text-dark/70">Est. 1974  4th generation craftsmen</span></div>
+          <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-0.5"><i class="ri-check-line text-white text-[14px]"></i></div><span class="font-secondary text-[14px] md:text-[15px] text-dark/70">100% in-house team no subcontracting</span></div>
+          <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-0.5"><i class="ri-check-line text-white text-[14px]"></i></div><span class="font-secondary text-[14px] md:text-[15px] text-dark/70">Maximum 50 projects per quarter quality over volume</span></div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="rounded-2xl md:rounded-3xl overflow-hidden h-[280px] md:h-[400px] lg:h-[500px]">
+          <img src="https://framerusercontent.com/images/os1s5fqDtUCsqPXaXl8kanGw.png?scale-down-to=1024" alt="Our Legacy" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+      <div class="relative order-2 lg:order-1">
+        <div class="rounded-2xl md:rounded-3xl overflow-hidden h-[280px] md:h-[400px] lg:h-[500px]">
+          <img src="https://framerusercontent.com/images/5vyxaS8akKRKG06xiDmLgIjFA.png?scale-down-to=1024" alt="Our Process" class="w-full h-full object-cover" />
+        </div>
+      </div>
+      <div class="space-y-6 md:space-y-8 order-1 lg:order-2">
+        <div class="space-y-3 md:space-y-4">
+          <span class="font-secondary font-semibold text-orange text-[12px] sm:text-[13px] md:text-[14px] uppercase tracking-widest block">Our Promise</span>
+          <h2 class="font-primary text-dark text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] leading-[1.15] tracking-tight">Better Materials. Better People. Better Outcome.</h2>
+        </div>
+        <p class="font-secondary text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] leading-[1.7] md:leading-[1.8] text-dark/70 font-light max-w-md">We use ISO 710 marine-grade core on every woodwork piece no exceptions. Direct vendor pricing from Polycab, Century, Merino, Hettich, Hafele, Fevicol Marine, and Rehau. No middlemen. No shortcuts. Backed by a 10-year woodwork warranty.</p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-0.5"><i class="ri-check-line text-white text-[14px]"></i></div><span class="font-secondary text-[14px] md:text-[15px] text-dark/70">10-year woodwork + 5-year hardware warranty</span></div>
+          <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-0.5"><i class="ri-check-line text-white text-[14px]"></i></div><span class="font-secondary text-[14px] md:text-[15px] text-dark/70">45–60 day guaranteed design-to-handover</span></div>
+          <div class="flex items-center gap-3"><div class="w-6 h-6 rounded-full bg-orange flex items-center justify-center flex-shrink-0 mt-0.5"><i class="ri-check-line text-white text-[14px]"></i></div><span class="font-secondary text-[14px] md:text-[15px] text-dark/70">3-year onsite service we come to you, zero cost</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+    <!-- ===== CONTACT SECTION ===== -->
+<section id="contact" class="pt-[80px] md:pt-[120px] lg:pt-[150px] px-4 sm:px-6 md:px-8 lg:px-10 bg-cream">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="max-w-3xl mx-auto text-center space-y-4 mb-16 md:mb-20">
+      <span class="font-secondary font-semibold text-orange text-[12px] sm:text-[13px] md:text-[14px] uppercase tracking-widest block">Get In Touch</span>
+      <h2 class="font-primary text-dark text-[28px] sm:text-[36px] md:text-[42px] lg:text-[52px] leading-[1.15]">Let's Start Your Project</h2>
+      <p class="font-secondary text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] leading-[1.7] text-dark/70 font-light">Book your free consultation today and let's talk about your space no pressure, no obligation, just clarity.</p>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10 items-stretch">
+
+      <!-- Left: Contact Info Cards -->
+      <div class="space-y-4 flex flex-col">
+
+        <!-- WhatsApp / Phone -->
+        <div class="bg-white flex-1 rounded-2xl p-5 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0">
+              <i class="ri-whatsapp-line text-orange text-[20px]"></i>
+            </div>
+            <div>
+              <h3 class="font-secondary text-[15px] font-semibold text-dark mb-1">WhatsApp / Phone</h3>
+              <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20enquire%20about%20InteriorsbyJangid." target="_blank" class="font-primary text-dark text-[20px] leading-none hover:text-orange transition-colors block">+91 93239 23202</a>
+              <p class="font-secondary text-[12px] text-dark/50 mt-2">Response within 2 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="bg-white flex-1 rounded-2xl p-5 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0">
+              <i class="ri-mail-line text-orange text-[20px]"></i>
+            </div>
+            <div>
+              <h3 class="font-secondary text-[15px] font-semibold text-dark mb-1">Email</h3>
+              <a href="mailto:info@interiorsbyjangid.com" class="font-secondary text-dark text-[14px] hover:text-orange transition-colors break-all">info@interiorsbyjangid.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Office Address -->
+        <div class="bg-white rounded-2xl flex-1 p-5 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0">
+              <i class="ri-map-pin-line text-orange text-[20px]"></i>
+            </div>
+            <div>
+              <h3 class="font-secondary text-[15px] font-semibold text-dark mb-1">Office Address</h3>
+              <p class="font-secondary text-[13px] text-dark/70 leading-[1.6]">Shop No 308, RKC Apartments,<br />Talav Road, BP Cross Road No 4,<br />Bhayandar East, Thane 401105</p>
+              <a href="https://maps.google.com/?q=RKC+Apartments+Bhayandar+East+Thane" target="_blank" class="inline-flex items-center gap-1 text-orange font-secondary font-semibold text-[12px] mt-2 hover:text-dark transition-colors">Get Directions <i class="ri-arrow-right-up-line text-[12px]"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Form -->
+      <div class="lg:col-span-2 space-y-4 flex flex-col">
+        <div class="bg-white rounded-2xl p-8 md:p-10 shadow-md flex-1 flex flex-col">
+          <h3 class="font-primary text-dark text-[22px] md:text-[26px] mb-5">Book Your Free Consultation</h3>
+          <form class="space-y-4 flex-1 flex flex-col">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div>
+                <label class="block font-secondary text-[12px] font-semibold text-dark mb-1.5">Full Name <span class="text-orange">*</span></label>
+                <input type="text" placeholder="Your name" required class="w-full px-4 py-2.5 border border-dark/10 rounded-lg font-secondary text-[13px] placeholder-dark/30 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/20 transition-all" />
+              </div>
+              <div>
+                <label class="block font-secondary text-[12px] font-semibold text-dark mb-1.5">Phone Number <span class="text-orange">*</span></label>
+                <input type="tel" placeholder="+91 XXXXX XXXXX" required class="w-full px-4 py-2.5 border border-dark/10 rounded-lg font-secondary text-[13px] placeholder-dark/30 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/20 transition-all" />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div>
+                <label class="block font-secondary text-[12px] font-semibold text-dark mb-1.5">Service Interest <span class="text-orange">*</span></label>
+                <select required class="w-full px-4 py-2.5 border border-dark/10 rounded-lg font-secondary text-[13px] text-dark/60 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/20 transition-all bg-white cursor-pointer">
+                  <option value="">Select service</option>
+                  <option value="interior_design">Interior Design</option>
+                  <option value="onsite_execution">Onsite Execution</option>
+                  <option value="modular_furniture">Modular Furniture</option>
+                  <option value="loose_furniture">Loose Furniture</option>
+                  <option value="furnishings">Furnishings</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-secondary text-[12px] font-semibold text-dark mb-1.5">Project Location</label>
+                <input type="text" placeholder="e.g. Bhayandar, Mira Road..." class="w-full px-4 py-2.5 border border-dark/10 rounded-lg font-secondary text-[13px] placeholder-dark/30 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/20 transition-all" />
+              </div>
+            </div>
+            <div>
+              <label class="block font-secondary text-[12px] font-semibold text-dark mb-1.5">Tell Us About Your Project</label>
+              <textarea placeholder="Share details about your space, timeline, or any specific requirements..." rows="3" class="w-full px-4 py-2.5 border border-dark/10 rounded-lg font-secondary text-[13px] placeholder-dark/30 focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/20 transition-all resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-orange hover:bg-dark text-white px-6 py-2.5 rounded-full font-secondary font-semibold text-[13px] transition-colors duration-300 mt-auto">Book Free Consultation</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    
+
+
+<!-- ===== TESTIMONIALS SECTION ===== -->
+<section id="testimonials" class="py-[80px] md:py-[120px] lg:py-[150px] px-4 sm:px-6 md:px-8 lg:px-10 bg-cream">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-center">
+
+      <!-- Left heading -->
+     <!-- Left heading -->
+<div class="col-span-4 space-y-4 md:space-y-6">
+  <h2 class="text-[32px] sm:text-[36px] lg:text-[44px] leading-[1.2] lg:leading-[53px] font-primary">
+    Client <span class="text-orange">Stories</span>.<br />
+    <span class="text-[20px] sm:text-[22px] lg:text-[28px] leading-[1.4] lg:leading-[36px] text-dark/70">Trusted By Those Who Know the Difference.</span>
+  </h2>
+  <div class="flex items-center gap-3">
+    <button id="testimonialPrev" class="w-[44px] h-[44px] rounded-full border border-dark/15 flex items-center justify-center text-dark/50 hover:bg-orange hover:text-white hover:border-orange transition-all duration-200">
+      <i class="ri-arrow-left-line text-[17px]"></i>
+    </button>
+    <button id="testimonialNext" class="w-[44px] h-[44px] rounded-full border border-dark/15 flex items-center justify-center text-dark/50 hover:bg-orange hover:text-white hover:border-orange transition-all duration-200">
+      <i class="ri-arrow-right-line text-[17px]"></i>
+    </button>
+  </div>
+</div>
+
+      <!-- Right: Swiper -->
+      <div class="col-span-8">
+        <div class="testimonial-swiper swiper overflow-hidden">
+          <div class="swiper-wrapper items-stretch">
+
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide h-auto">
+              <div class="p-[18px] h-full flex flex-col justify-between space-y-[36px] rounded-[8px] bg-[#fffaf3] shadow-card">
+                <div class="flex items-center gap-3">
+                  <img class="size-[72px] rounded-full object-cover" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ar. Priya Khandelwal" />
+                  <span class="text-[11px] font-secondary font-medium text-[#2f2c25] bg-orange/10 border border-orange/20 rounded-full px-[10px] py-[3px]">Architectural Partner</span>
+                </div>
+                <p class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">"We've worked with over a dozen contractors in our 18 years of practice. Jangid's team is the only one we've found that consistently delivers what they promise on materials, on time, and on finish quality. Our clients ask us for their number constantly."</p>
+                <div class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">
+                  <p class="font-semibold">Ar. Priya Khandelwal</p>
+                  <p class="text-[#272727b3]">Principal Architect, PK Studio</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide h-auto">
+              <div class="p-[18px] h-full flex flex-col justify-between space-y-[36px] rounded-[8px] bg-[#fffaf3] shadow-card">
+                <div class="flex items-center gap-3">
+                  <img class="size-[72px] rounded-full object-cover" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Rohit & Sunita Mehta" />
+                  <span class="text-[11px] font-secondary font-medium text-[#2f2c25] bg-orange/10 border border-orange/20 rounded-full px-[10px] py-[3px]">Residential Client</span>
+                </div>
+                <p class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">"I was skeptical of any contractor promising 45-day handover. They did it in 52 days for a full 3BHK including modular kitchen, wardrobes, living room, and master bedroom. The quality check before handover was more thorough than I expected."</p>
+                <div class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">
+                  <p class="font-semibold">Rohit & Sunita Mehta</p>
+                  <p class="text-[#272727b3]">3BHK Renovation, Bhayandar West</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide h-auto">
+              <div class="p-[18px] h-full flex flex-col justify-between space-y-[36px] rounded-[8px] bg-[#fffaf3] shadow-card">
+                <div class="flex items-center gap-3">
+                  <img class="size-[72px] rounded-full object-cover" src="https://randomuser.me/api/portraits/men/76.jpg" alt="Nikhil Agarwal" />
+                  <span class="text-[11px] font-secondary font-medium text-[#2f2c25] bg-orange/10 border border-orange/20 rounded-full px-[10px] py-[3px]">Commercial Client</span>
+                </div>
+                <p class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">"We needed our 2,200 sq ft office done in under 60 days without disrupting our neighbouring floor. The project management was exceptional daily updates, zero site accidents, and every punch item closed before handover day."</p>
+                <div class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">
+                  <p class="font-semibold">Nikhil Agarwal</p>
+                  <p class="text-[#272727b3]">Director, Agarwal Fintech Pvt. Ltd.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="swiper-slide h-auto">
+              <div class="p-[18px] h-full flex flex-col justify-between space-y-[36px] rounded-[8px] bg-[#fffaf3] shadow-card">
+                <div class="flex items-center gap-3">
+                  <img class="size-[72px] rounded-full object-cover" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Deepa Shinde" />
+                  <span class="text-[11px] font-secondary font-medium text-[#2f2c25] bg-orange/10 border border-orange/20 rounded-full px-[10px] py-[3px]">Design Partner</span>
+                </div>
+                <p class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">"As an interior designer, I need contractors who understand design intent, not just execute drawings. The Jangid team understood exactly what we meant by 'satin PU with anti-glare' and delivered it flawlessly across 18 cabinets."</p>
+                <div class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">
+                  <p class="font-semibold">Deepa Shinde</p>
+                  <p class="text-[#272727b3]">Interior Designer, DS Interiors</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="swiper-slide h-auto">
+              <div class="p-[18px] h-full flex flex-col justify-between space-y-[36px] rounded-[8px] bg-[#fffaf3] shadow-card">
+                <div class="flex items-center gap-3">
+                  <img class="size-[72px] rounded-full object-cover" src="https://randomuser.me/api/portraits/women/55.jpg" alt="Kavita Desai" />
+                  <span class="text-[11px] font-secondary font-medium text-[#2f2c25] bg-orange/10 border border-orange/20 rounded-full px-[10px] py-[3px]">Residential Client</span>
+                </div>
+                <p class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">"After a horrible experience with another contractor, I was introduced to Jangid's team. The 10-year woodwork warranty gave me the confidence to sign. Two years in not a single call needed. Everything is exactly as it was on day one."</p>
+                <div class="font-secondary text-[#2f2c25] font-normal text-[14px] leading-[21px]">
+                  <p class="font-semibold">Kavita Desai</p>
+                  <p class="text-[#272727b3]">Full Home, Mira Road</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+   <!-- ===== CTA SECTION ===== -->
+<section class="relative py-[100px] md:py-[150px] px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden">
+  <video class="absolute inset-0 w-full h-full object-cover" src="./video.mp4" autoplay loop muted playsinline></video>
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="relative z-10 max-w-7xl mx-auto text-center space-y-6">
+    <span class="font-secondary font-semibold text-orange text-[13px] uppercase tracking-widest block">Ready to Begin?</span>
+    <h2 class="font-primary text-white text-[clamp(36px,5.5vw,80px)] leading-[1.1]">Your Space Deserves<br />A Team Built For It.</h2>
+    <p class="font-secondary text-white/65 text-[16px] md:text-[17px] leading-[1.8] font-light max-w-xl mx-auto">Slots are limited to 50 projects per quarter. If you're planning an interior project, the right time to start the conversation is now. No pressure, no obligation just clarity.</p>
+    <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+      <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20with%20InteriorsbyJangid." class="inline-flex group items-center gap-2 bg-orange text-white px-8 py-4 rounded-full font-secondary font-semibold text-[14px] hover:bg-white hover:text-dark transition-all duration-300">
+        Book Free Consultation
+        <div class="relative w-[16px] h-[16px] overflow-hidden flex items-center justify-center">
+          <i class="ri-arrow-right-up-line absolute text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+          <i class="ri-arrow-right-up-line absolute text-[16px] -translate-x-[16px] translate-y-[16px] transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"></i>
+        </div>
+      </a>
+      <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20request%20a%20site%20visit%20from%20InteriorsbyJangid." class="inline-flex group items-center gap-2 bg-white/10 border border-white/25 text-white px-8 py-4 rounded-full font-secondary font-semibold text-[14px] hover:bg-white hover:text-dark transition-all duration-300 backdrop-blur-sm">
+        Get a Site Visit
+        <div class="relative w-[16px] h-[16px] overflow-hidden flex items-center justify-center">
+          <i class="ri-arrow-right-up-line absolute text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+          <i class="ri-arrow-right-up-line absolute text-[16px] -translate-x-[16px] translate-y-[16px] transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"></i>
+        </div>
+      </a>
+      <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20talk%20to%20the%20InteriorsbyJangid%20team." class="inline-flex group items-center gap-2 bg-white/10 border border-white/25 text-white px-8 py-4 rounded-full font-secondary font-semibold text-[14px] hover:bg-white hover:text-dark transition-all duration-300 backdrop-blur-sm">
+        WhatsApp Us Now
+        <div class="relative w-[16px] h-[16px] overflow-hidden flex items-center justify-center">
+          <i class="ri-whatsapp-line absolute text-[16px] transition-all duration-300 group-hover:translate-x-[16px] group-hover:-translate-y-[16px]"></i>
+          <i class="ri-whatsapp-line absolute text-[16px] -translate-x-[16px] translate-y-[16px] transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"></i>
+        </div>
+      </a>
+    </div>
+    <p class="font-secondary text-white/40 text-[13px] pt-2">Free consultation · No obligation · Response within 2 hours</p>
+  </div>
+</section>
+  <!-- ===== FOOTER ===== -->
+<footer class="bg-cream px-4 sm:px-6 md:px-8 lg:px-10 pt-[80px] md:pt-[100px] pb-0">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Top Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-dark/10">
+
+      <!-- Brand Column -->
+      <div class="lg:col-span-4 space-y-6">
+        <div>
+          <p class="font-primary text-dark text-[28px] leading-none">InteriorsbyJangid</p>
+          <p class="font-secondary text-orange text-[12px] font-semibold uppercase tracking-widest mt-1">Legacy Turnkey Interior Contracting</p>
+        </div>
+        <p class="font-secondary text-dark/60 text-[14px] leading-[1.8] font-light max-w-xs">Four generations. One promise. Every project delivered with the same honour, craftsmanship, and accountability that the Jangid family has built its name on since 1974.</p>
+        <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20enquire%20about%20InteriorsbyJangid%20services." class="inline-flex items-center gap-2 font-secondary text-dark/70 text-[14px] hover:text-orange transition-colors duration-200">
+          <i class="ri-whatsapp-line text-orange text-[17px]"></i>+91 93239 23202
+        </a>
+        <div class="flex gap-3">
+          <a href="#" class="w-10 h-10 rounded-full border border-dark/15 flex items-center justify-center text-dark/50 hover:bg-orange hover:text-white hover:border-orange transition-all duration-200"><i class="ri-instagram-line text-[17px]"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full border border-dark/15 flex items-center justify-center text-dark/50 hover:bg-orange hover:text-white hover:border-orange transition-all duration-200"><i class="ri-linkedin-box-line text-[17px]"></i></a>
+          <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20enquire%20about%20InteriorsbyJangid." class="w-10 h-10 rounded-full border border-dark/15 flex items-center justify-center text-dark/50 hover:bg-orange hover:text-white hover:border-orange transition-all duration-200"><i class="ri-whatsapp-line text-[17px]"></i></a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="lg:col-span-2 space-y-5">
+        <p class="font-secondary font-semibold text-dark text-[13px] uppercase tracking-widest">Services</p>
+        <ul class="space-y-3">
+          <li><a href="#services" class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Interior Design</a></li>
+          <li><a href="#services" class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Onsite Execution</a></li>
+          <li><a href="#services" class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Modular Furniture</a></li>
+          <li><a href="#services" class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Loose Furniture</a></li>
+          <li><a href="#services" class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Furnishings</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="lg:col-span-2 space-y-5">
+        <p class="font-secondary font-semibold text-dark text-[13px] uppercase tracking-widest">Company</p>
+        <ul class="space-y-3">
+          <li><a href="#about"        class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Our Legacy</a></li>
+          <li><a href="#process"      class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Our Process</a></li>
+          <li><a href="#warranty"     class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Warranty</a></li>
+          <li><a href="#quality"      class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Quality Control</a></li>
+          <li><a href="#testimonials" class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">Client Stories</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="lg:col-span-4 space-y-5">
+        <p class="font-secondary font-semibold text-dark text-[13px] uppercase tracking-widest">Contact</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <i class="ri-whatsapp-line text-orange text-[17px] mt-0.5 flex-shrink-0"></i>
+            <div>
+              <p class="font-secondary text-dark/40 text-[12px] uppercase tracking-widest mb-0.5">WhatsApp / Phone</p>
+              <a href="https://wa.me/919323923202?text=Hi%2C%20I%20want%20to%20enquire%20about%20InteriorsbyJangid." class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">+91 93239 23202</a>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="ri-mail-line text-orange text-[17px] mt-0.5 flex-shrink-0"></i>
+            <div>
+              <p class="font-secondary text-dark/40 text-[12px] uppercase tracking-widest mb-0.5">Email</p>
+              <a href="mailto:info@interiorsbyjangid.com" class="font-secondary text-dark/60 text-[14px] hover:text-orange transition-colors duration-200">info@interiorsbyjangid.com</a>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="ri-map-pin-line text-orange text-[17px] mt-0.5 flex-shrink-0"></i>
+            <div>
+              <p class="font-secondary text-dark/40 text-[12px] uppercase tracking-widest mb-0.5">Office Address</p>
+              <span class="font-secondary text-dark/60 text-[14px] leading-[1.6]">Shop No 308, RKC Apartments,<br />Talav Road, BP Cross Road No 4,<br />Bhayandar East, Thane — 401105</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="font-secondary text-dark/40 text-[13px]">© 2024 InteriorsbyJangid. All rights reserved. Legacy since 1974.</p>
+      <div class="flex items-center justify-center gap-5 flex-wrap">
+        <p class="font-secondary text-dark/40 text-[13px]">Est. 1974 · 4th Generation · Mumbai, Maharashtra</p>
+        <span class="w-px h-3 bg-dark/20"></span>
+        <p class="font-secondary text-dark/40 text-[13px]">Crafted by <a href="#" class="text-orange hover:text-dark font-medium transition-colors duration-200">Raino Studios</a></p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+     
+    <!-- ===== SWIPER JS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      /* Hero Swiper */
+      const heroSwiper = new Swiper(".hero-swiper", {
+        loop: true,
+        autoplay: { delay: 5500, disableOnInteraction: false },
+        speed: 900,
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        pagination: { el: ".swiper-pagination", clickable: true },
+      });
+      document.getElementById("heroPrev").addEventListener("click", () => heroSwiper.slidePrev());
+      document.getElementById("heroNext").addEventListener("click", () => heroSwiper.slideNext());
+
+      /* Testimonial Swiper */
+      const testimonialSwiper = new Swiper(".testimonial-swiper", {
+        loop: false,
+        speed: 600,
+        slidesPerView: 1,
+        spaceBetween: 24,
+        breakpoints: {
+          480: { slidesPerView: 2, spaceBetween: 24 }
+        },
+      });
+      document.getElementById("testimonialPrev").addEventListener("click", () => testimonialSwiper.slidePrev());
+      document.getElementById("testimonialNext").addEventListener("click", () => testimonialSwiper.slideNext());
+    </script>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69fd940da11ae21c341a1811/1jo38klk5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+  </body>
+</html>
