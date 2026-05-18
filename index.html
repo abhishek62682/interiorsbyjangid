@@ -90,28 +90,7 @@
       <div class="loader-bar bg-orange" style="width:20%;height:100%;transform-origin:top;"></div>
     </div> -->
 
-    <script>
-      /* Lenis smooth scroll */
-      const lenis = new Lenis({ autoRaf: true });
-      lenis.on('scroll', (e) => { console.log(e); });
-
-      /* Page loader animation */
-      (function () {
-        const loader = document.getElementById("loader");
-        document.body.style.overflow = "hidden";
-        gsap.to(".loader-bar", {
-          height: 0,
-          duration: 0.4,
-          ease: "power3.inOut",
-          stagger: 0.1,
-          delay: 0.1,
-          onComplete: () => {
-            loader.style.display = "none";
-            document.body.style.overflow = "";
-          }
-        });
-      })();
-    </script>
+   
 
     <!-- ===== FIXED ACTION BUTTONS ===== -->
     <div class="fixed bottom-25 right-6 z-50 flex flex-col items-end gap-3">
